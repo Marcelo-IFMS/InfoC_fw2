@@ -1,7 +1,9 @@
 var http = require('http');
 var server = http.createServer(function (req, res) {
     var url = req.url;
-    if (url == '/cursos') {
+    if (url == '/') { 
+        res.end(`Pagina Inicial da disciplina de FW2`) 
+    }     else if (url == '/cursos') {
         res.end(`<h1>Bem vindos aos ${url}</h1>`)
     } else if (url == '/pesquisa') {
         res.end(`<h1>Bem vindos a ${url}</h1>`)
