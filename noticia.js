@@ -14,6 +14,6 @@ var server = http.createServer(function (req, res) {
     } else {
         res.end(`<h1>Pagina nao encontrada: ${url}</h1>`)
     }
-    console.log(req.url);
+    console.log(req.url+' - '+req.method);
 })
 server.listen(3000);

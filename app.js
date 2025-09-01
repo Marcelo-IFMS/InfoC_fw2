@@ -1,11 +1,18 @@
-var express = require('express')
-var app = express()
-app.get('/', function (req, res) {
-    res.send('Pagina Inicial da disciplina de FW2')
-});
-app.post('/', function(req,res){
-    res.send('Post na página inicial')
+const express = require('express')
+const app = express()
+const port = 3000
+app.all('/', (req, res, next) => {
+  console.log(req.url + ' - ' + req.method)
+  next()
 })
-app.listen(3000, function () {
-    console.log('Servidor rodando na porta 3000')
-});
+app.get('/', (req, res) => {
+  res.send('Bem vindos turma 6C - GET')})
+app.post('/', (req, res) => {
+  res.send('Bem vindos turma 6C - Post')})
+app.put('/', (req, res) => {
+  res.send('Bem vindos turma 6C - PUT')})
+app.delete('/', (req, res) => {
+  res.send('Bem vindos turma 6C - Delete')})
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

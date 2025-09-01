@@ -1,0 +1,6 @@
+// para iniciar o projeto
+npm init
+// para instalar o express
+npm i express
+// para instalar o nodemon
+npm i nodemon
