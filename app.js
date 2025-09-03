@@ -1,11 +1,14 @@
 const express = require('express')
 const app = express()
+const port = process.env.port //set port=3000; set <listas as variáveis de Ambiente>
 
-const port = 3000
+
 //possibilita a utilização de arquibos ejs renderizados pelo express
 app.set('view engine', 'ejs')
 // para alterar a pasta padrão 'views' deve inserir o código:
 //  app.set('views', 'nova/pasta') 
+app.use(express.static('public'))
+
 
 app.all('/', (req, res, next) => {
   console.log(req.url + ' - ' + req.method)
