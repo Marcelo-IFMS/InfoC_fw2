@@ -16,7 +16,7 @@ app.all('/', (req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-  res.send('Bem vindos turma 6C - GET')})
+  res.render('index')})
 app.post('/', (req, res) => {
   res.send('Bem vindos turma 6C - Post')})
 app.put('/', (req, res) => {

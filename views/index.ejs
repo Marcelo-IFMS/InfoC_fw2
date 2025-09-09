@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Bem Vindo a Página Inicial</h1>
+    <script lang="text/javascript">
+        var x;
+        var y;
+        x = 2;
+        y = 2;
+        z = x + y;
+        alert("A soma de 2 + 2 é: " + z);
+        document.write("A soma de 2 + 2 é: " + z);
+    </script>
+    <p>A soma de 2+2 =<%=2+2%>
+    </p>
+    <% if (process.env.USERNAME=='Marcelo') { %>
+        <h2><p> Você está logado como: <%= process.env.USERNAME %></p></h2>
+    <% } %>
+    <% var frutas=['maçã', 'banana', 'laranja', 'jabuticaba','goiaba','melão']%>
+    <table>
+        <th>
+            <td>Listas de Frutas</td>
+        </th>
+       <%for (i=0 ; i < frutas.length ; i++){ %>
+        <tr>
+            <td><%=frutas[i]%></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>
