@@ -10,3 +10,5 @@ npm i ejs
 set port=3000
 //para instalar o consign
 npm i consign
+//Instalar o mongo db
+npm i mongodb

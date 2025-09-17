@@ -1,6 +1,6 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const consign = require('consign')
+import consign from 'consign'
 
 //possibilita a utilização de arquibos ejs renderizados pelo express
 app.set('view engine', 'ejs')
@@ -9,4 +9,4 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 consign().include('/rotas').into(app)
 
-module.exports = app;
+export default app;
