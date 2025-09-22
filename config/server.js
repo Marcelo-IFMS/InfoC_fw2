@@ -1,12 +1,12 @@
-import express from 'express'
+const express = require('express')//get, put, delete,psot são os métodos HTTP
 const app = express()
-import consign from 'consign'
+const consign = require('consign');
 
-//possibilita a utilização de arquibos ejs renderizados pelo express
-app.set('view engine', 'ejs')
-// para alterar a pasta padrão 'views' deve inserir o código:
-// app.set('views', 'nova/pasta') 
+app.set('view engine','ejs')
 app.use(express.static('public'))
-consign().include('/rotas').into(app)
+consign()
+  .include('rotas')
+  //.then('./config/db.js')
+  .into(app);
 
-export default app;
+module.exports = app;

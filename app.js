@@ -1,14 +1,6 @@
-
-import app  from './config/server.js'
-import db from './config/db.js';
-const port = process.env.port ////set port=3000; set <listas as variáveis de Ambiente>
-import boasVindas from './modulo.js'
-
-app.get("/db", async (req, res) => {
-    const movies = await db();
-    res.json({ msg: "Arquivo db.js executado", resultado: movies });
-});
+const app = require('./config/server')
+const port = require('./config/port')
 
 app.listen(port, () => {
-  console.log(`${boasVindas}, aberto na porta: ${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
