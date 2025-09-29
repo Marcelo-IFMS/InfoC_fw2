@@ -4,6 +4,7 @@
   "description": "codigos da diciplina de FW 2 para a turma de info C",
   "main": "app.js",
   "scripts": {
+    "env":"nodemon --env-file=.env app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Turma Info C",
@@ -12,7 +13,7 @@
     "consign": "^0.1.6",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "mongodb": "^6.19.0",
+    "mongodb": "^6.20.0",
     "nodemon": "^3.1.10"
   }
 }

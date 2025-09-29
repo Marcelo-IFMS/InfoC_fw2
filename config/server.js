@@ -6,7 +6,7 @@ app.set('view engine','ejs')
 app.use(express.static('public'))
 consign()
   .include('rotas')
-  //.then('./config/db.js')
+  .then('./config/dbconnet.js')
   .into(app);
 
 module.exports = app;
