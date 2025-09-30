@@ -1,5 +1,5 @@
 module.exports = function (app) {
-    app.get('/db',  async (req, res) => {
+    app.get('/gmail',  async (req, res) => {
         try {
             await app.dbClient.connect();
             const users = await app.dbClient.db('sample_mflix').collection('users').find({ email: /gmail.com/ }).toArray();
