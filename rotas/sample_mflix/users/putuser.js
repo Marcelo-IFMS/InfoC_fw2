@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    app.post('/postuser', async (req, res) => {
+    app.put('/putuser', async (req, res) => {
         try {
             const name = req.body.name
             const email = req.body.email
@@ -7,10 +7,10 @@ module.exports = (app) => {
             await app.dbClient.connect();
             const resultado = await app.dbClient.db('sample_mflix')
                 .collection('users')
-                .insertOne({name:name, email:email, password:password})
-            res.status(200).send('Dados Gravados')
+                .updateOne({ name: name }, { $set: { email: email, password: password } })
+            res.status(200).send('Dados apagados')
         } catch (error) {
-            res.status(400).send('Erro ao Gravar: '+error)
+            res.status(400).send('Erro ao Gravar: ' + error)
         }
     })
 }
